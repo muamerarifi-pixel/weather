@@ -1,0 +1,81 @@
+name: Build APK
+
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - "README.md"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build-apk
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+          cache: gradle
+
+      - name: Signing key
+        shell: bash
+        env:
+          KEYSTORE_B64: ${{ secrets.MOTI_KEYSTORE_B64 }}
+          KEYSTORE_PASSWORD: ${{ secrets.MOTI_KEYSTORE_PASSWORD }}
+        run: |
+          mkdir -p keystore
+          if [ -n "$KEYSTORE_B64" ] && [ -n "$KEYSTORE_PASSWORD" ]; then
+            echo "$KEYSTORE_B64" | base64 -d > keystore/moti.jks
+            echo "MOTI_KEYSTORE_PASSWORD=$KEYSTORE_PASSWORD" >> "$GITHUB_ENV"
+            echo "Using the saved signing key."
+          else
+            PASS="$(openssl rand -hex 16)"
+            echo "::add-mask::$PASS"
+            keytool -genkeypair -keystore keystore/moti.jks -storetype PKCS12 -alias moti \
+              -keyalg RSA -keysize 2048 -validity 36500 -storepass "$PASS" -keypass "$PASS" \
+              -dname "CN=Moti, O=Moti, C=XK"
+            echo "MOTI_KEYSTORE_PASSWORD=$PASS" >> "$GITHUB_ENV"
+            echo "::warning::No MOTI_KEYSTORE_B64 secret: this APK is signed with a one-time key."
+          fi
+
+      - name: Build release APK
+        shell: bash
+        run: |
+          chmod +x gradlew
+          ./gradlew --no-daemon --stacktrace assembleRelease 2>&1 | tee build.log
+
+      - name: Publish release (Moti.apk)
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p out
+          cp app/build/outputs/apk/release/app-release.apk out/Moti.apk
+          TAG="v1.0.${{ github.run_number }}"
+          gh release create "$TAG" out/Moti.apk \
+            --title "Moti $TAG" \
+            --notes "Shkarko **Moti.apk** dhe instaloje në telefon. Versioni i ri instalohet mbi të vjetrin pa humbur cilësimet." \
+            --latest
+
+      - name: Save build log (only if the build failed)
+        if: failure()
+        shell: bash
+        run: |
+          cp build.log /tmp/build.log 2>/dev/null || echo "no build log" > /tmp/build.log
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout --orphan build-log
+          git rm -rf --cached . > /dev/null 2>&1 || true
+          cp /tmp/build.log build.log
+          git add -f build.log
+          git commit -m "Build log #${{ github.run_number }}"
+          git push -f origin build-log

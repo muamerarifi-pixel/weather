@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="text">#FFFFFFFF</color>
+    <color name="text2">#E0FFFFFF</color>
+    <color name="text3">#A6FFFFFF</color>
+    <color name="accent">#FF9CC4FF</color>
+    <color name="shadow">#73000000</color>
+    <color name="window_fallback">#E60B1220</color>
+</resources>

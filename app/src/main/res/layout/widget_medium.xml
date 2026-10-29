@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@android:id/background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/glass"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:importantForAccessibility="no"
+        android:scaleType="fitXY"
+        android:src="@drawable/glass_bg" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:padding="14dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_temp"
+                style="@style/W.TempM"
+                android:text="12°" />
+
+            <TextView
+                android:id="@+id/tv_icon"
+                style="@style/W.Icon"
+                android:textSize="26sp"
+                android:text="🌧️" />
+
+            <TextView
+                android:id="@+id/tv_city"
+                style="@style/W.City"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                android:gravity="end"
+                android:textColor="@color/text2"
+                android:textSize="13sp"
+                android:text="Prishtinë" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_headline"
+            style="@style/W.Headline"
+            android:layout_marginTop="8dp"
+            android:textSize="18sp"
+            android:text="Më vonë bie shi." />
+
+        <TextView
+            android:id="@+id/tv_line2"
+            style="@style/W.Line"
+            android:textSize="13sp"
+            android:text="Nëse del tani, vishu më trashë. 🧥" />
+    </LinearLayout>
+</FrameLayout>

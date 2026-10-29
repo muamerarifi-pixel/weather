@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@android:id/background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/glass"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:importantForAccessibility="no"
+        android:scaleType="fitXY"
+        android:src="@drawable/glass_bg" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingStart="20dp"
+        android:paddingTop="16dp"
+        android:paddingEnd="18dp"
+        android:paddingBottom="12dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_city"
+                    style="@style/W.City"
+                    android:text="Prishtinë, Kosovë" />
+
+                <TextView
+                    android:id="@+id/tv_cond"
+                    style="@style/W.Cond"
+                    android:text="Mot i vranët · Ndihet si 9°" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_temp"
+                style="@style/W.Temp"
+                android:text="12" />
+
+            <TextView
+                android:id="@+id/tv_unit"
+                style="@style/W.Unit"
+                android:text="°C" />
+
+            <TextView
+                android:id="@+id/tv_icon"
+                style="@style/W.Icon"
+                android:text="🌧️" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_headline"
+                style="@style/W.Headline"
+                android:text="Më vonë bie shi." />
+
+            <TextView
+                android:id="@+id/tv_line2"
+                style="@style/W.Line"
+                android:text="Nëse del tani, vishu më trashë. 🧥" />
+
+            <TextView
+                android:id="@+id/tv_line3"
+                style="@style/W.Line"
+                android:text="Nesër do të jetë shumë ftohtë. 🧥" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/btn_city"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingTop="6dp"
+                android:paddingBottom="2dp">
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:importantForAccessibility="no"
+                    android:src="@drawable/ic_nav" />
+
+                <TextView
+                    style="@style/W.Link"
+                    android:text="@string/pick_city" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_updated"
+                style="@style/W.Updated"
+                android:text="↻ 15:41" />
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>

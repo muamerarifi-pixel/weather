@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Moti</string>
+    <string name="widget_description">Moti i gjallë për qytetin tënd, me fjali të thjeshta në shqip.</string>
+    <string name="tagline">Moti i gjallë për qytetet e Kosovës</string>
+    <string name="pick_city">Zgjidh qytetin…</string>
+    <string name="pick_city_title">Zgjidh qytetin</string>
+    <string name="pick_city_widget">Qyteti i widget-it</string>
+    <string name="search_hint">Kërko qytetin…</string>
+    <string name="city">Qyteti</string>
+    <string name="change">Ndrysho ›</string>
+    <string name="city_country">%1$s, Kosovë</string>
+    <string name="auto_refresh">Rifreskimi automatik</string>
+    <string name="auto_refresh_hint">Sa shpesh të merren të dhëna të reja për widget-in.</string>
+    <string name="transparency">Tejdukshmëria e xhamit</string>
+    <string name="next_hours">Orët në vijim</string>
+    <string name="add_widget">＋  Shto widget-in në ekran</string>
+    <string name="add_widget_manual">Mbaj shtypur ekranin bazë → Widget-ët → Moti</string>
+    <string name="refresh">Rifresko</string>
+    <string name="back">Kthehu</string>
+    <string name="refreshing">Duke rifreskuar…</string>
+    <string name="updated_at">Përditësuar në %1$s</string>
+    <string name="loading">Duke marrë motin…</string>
+    <string name="no_internet">S\'ka lidhje me internetin.</string>
+    <string name="fetch_failed">S\'u arrit të merret moti. Kontrollo internetin.</string>
+    <string name="battery_hint">Që widget-i të rifreskohet me kohë, lejoje aplikacionin të punojë në sfond.</string>
+    <string name="battery_allow">Lejo punën në sfond</string>
+    <string name="attribution">Të dhënat e motit: Open-Meteo.com (CC BY 4.0)\nCilësia e ajrit: Copernicus CAMS</string>
+    <string name="now">Tani</string>
+</resources>

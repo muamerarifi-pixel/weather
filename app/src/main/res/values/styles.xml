@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- ================= App ================= -->
+    <style name="T">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/text</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="T.Title">
+        <item name="android:textSize">32sp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
+    <style name="T.Title2">
+        <item name="android:textSize">22sp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:layout_marginStart">10dp</item>
+    </style>
+
+    <style name="T.Sub">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/text3</item>
+        <item name="android:layout_marginTop">6dp</item>
+    </style>
+
+    <style name="T.City">
+        <item name="android:textSize">18sp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <style name="T.Cond">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/text3</item>
+        <item name="android:layout_marginTop">5dp</item>
+    </style>
+
+    <style name="T.Temp">
+        <item name="android:textSize">52sp</item>
+        <item name="android:fontFamily">sans-serif-light</item>
+    </style>
+
+    <style name="T.Icon">
+        <item name="android:textSize">40sp</item>
+        <item name="android:layout_marginStart">8dp</item>
+    </style>
+
+    <style name="T.Headline">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:textSize">26sp</item>
+        <item name="android:layout_marginTop">16dp</item>
+        <item name="android:lineSpacingExtra">2dp</item>
+    </style>
+
+    <style name="T.Small">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/text3</item>
+    </style>
+
+    <style name="T.Label">
+        <item name="android:textSize">15sp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textColor">@color/text2</item>
+    </style>
+
+    <style name="T.Value">
+        <item name="android:textSize">20sp</item>
+        <item name="android:layout_marginTop">6dp</item>
+    </style>
+
+    <style name="T.Hint">
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">@color/text3</item>
+        <item name="android:layout_marginTop">6dp</item>
+    </style>
+
+    <style name="T.Body">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@color/text2</item>
+        <item name="android:lineSpacingExtra">3dp</item>
+    </style>
+
+    <style name="T.Link">
+        <item name="android:textSize">15sp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textColor">@color/accent</item>
+    </style>
+
+    <style name="T.IconBtn">
+        <item name="android:layout_width">46dp</item>
+        <item name="android:layout_height">46dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:background">@drawable/circle_btn</item>
+    </style>
+
+    <style name="T.Button">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:gravity">center</item>
+        <item name="android:padding">13dp</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:background">@drawable/btn_bg</item>
+    </style>
+
+    <style name="T.ButtonPrimary">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_marginTop">16dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:padding">16dp</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:background">@drawable/btn_primary</item>
+    </style>
+
+    <style name="T.Footer">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/text3</item>
+        <item name="android:layout_marginTop">20dp</item>
+        <item name="android:lineSpacingExtra">4dp</item>
+    </style>
+
+    <style name="T.Search">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_marginTop">16dp</item>
+        <item name="android:padding">14dp</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColorHint">@color/text3</item>
+        <item name="android:background">@drawable/search_bg</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <style name="Card">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">12dp</item>
+        <item name="android:padding">18dp</item>
+        <item name="android:background">@drawable/card_bg</item>
+    </style>
+
+    <!-- ================= Widget ================= -->
+    <style name="W">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/text</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:shadowColor">@color/shadow</item>
+        <item name="android:shadowRadius">4</item>
+        <item name="android:shadowDy">1</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <style name="W.City">
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
+    <style name="W.Cond">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/text3</item>
+        <item name="android:layout_marginTop">4dp</item>
+    </style>
+
+    <style name="W.Temp">
+        <item name="android:textSize">46sp</item>
+        <item name="android:fontFamily">sans-serif-light</item>
+    </style>
+
+    <style name="W.TempM">
+        <item name="android:textSize">34sp</item>
+        <item name="android:fontFamily">sans-serif-light</item>
+    </style>
+
+    <style name="W.TempS">
+        <item name="android:textSize">26sp</item>
+        <item name="android:fontFamily">sans-serif-light</item>
+    </style>
+
+    <style name="W.Unit">
+        <item name="android:textSize">18sp</item>
+        <item name="android:layout_gravity">top</item>
+        <item name="android:paddingTop">7dp</item>
+    </style>
+
+    <style name="W.Icon">
+        <item name="android:textSize">34sp</item>
+        <item name="android:layout_marginStart">8dp</item>
+        <item name="android:shadowRadius">0</item>
+    </style>
+
+    <style name="W.Headline">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:textSize">25sp</item>
+        <item name="android:maxLines">2</item>
+    </style>
+
+    <style name="W.Line">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@color/text2</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:maxLines">2</item>
+    </style>
+
+    <style name="W.Link">
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">@color/accent</item>
+        <item name="android:layout_marginStart">6dp</item>
+    </style>
+
+    <style name="W.Updated">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/text3</item>
+        <item name="android:paddingStart">10dp</item>
+        <item name="android:paddingTop">6dp</item>
+        <item name="android:paddingBottom">2dp</item>
+    </style>
+</resources>
