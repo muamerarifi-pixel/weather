@@ -47,6 +47,7 @@ object Glass {
     /** Real blur when the phone supports it (and battery saver is off); otherwise a darker tint. */
     fun updateBlur(a: Activity) {
         val w = a.window
+        w.decorView // make sure the window is built before touching blur
         var blur = false
         if (Build.VERSION.SDK_INT >= 31) {
             blur = a.windowManager.isCrossWindowBlurEnabled

@@ -40,8 +40,8 @@ class MainActivity : Activity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Glass.setup(this)
         setContentView(R.layout.activity_main)
+        Glass.setup(this)
         Glass.applyInsets(findViewById(R.id.content))
 
         tvCity = findViewById(R.id.tv_city)

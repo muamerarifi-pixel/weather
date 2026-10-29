@@ -26,8 +26,8 @@ class CityActivity : Activity() {
             ?: AppWidgetManager.INVALID_APPWIDGET_ID
         setResult(RESULT_CANCELED, Intent().putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, widgetId))
 
-        Glass.setup(this)
         setContentView(R.layout.activity_city)
+        Glass.setup(this)
         Glass.applyInsets(findViewById(R.id.city_root))
 
         val forWidget = widgetId != AppWidgetManager.INVALID_APPWIDGET_ID
