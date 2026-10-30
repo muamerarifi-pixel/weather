@@ -52,9 +52,27 @@
             android:id="@+id/card_weather"
             style="@style/Card"
             android:layout_marginTop="16dp"
-            android:background="@drawable/glass_bg"
+            android:background="@drawable/glass_m"
             android:orientation="vertical"
             android:padding="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="14dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tab_today"
+                    style="@style/T.Tab"
+                    android:text="Sot" />
+
+                <TextView
+                    android:id="@+id/tab_tomorrow"
+                    style="@style/T.Tab"
+                    android:layout_marginStart="8dp"
+                    android:text="Nesër" />
+            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -181,36 +199,125 @@
                 android:columnCount="3" />
         </LinearLayout>
 
-        <!-- Glass transparency -->
+        <!-- Widget look -->
         <LinearLayout
             style="@style/Card"
             android:orientation="vertical">
 
+            <TextView
+                style="@style/T.Label"
+                android:textSize="17sp"
+                android:text="@string/look" />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
                 android:orientation="horizontal">
 
                 <TextView
                     style="@style/T.Label"
                     android:layout_width="0dp"
                     android:layout_weight="1"
-                    android:text="@string/transparency" />
+                    android:text="@string/text_size" />
 
                 <TextView
-                    android:id="@+id/tv_alpha"
+                    android:id="@+id/tv_size"
                     style="@style/T.Label" />
             </LinearLayout>
 
             <SeekBar
-                android:id="@+id/sb_alpha"
+                android:id="@+id/sb_size"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:max="90"
+                android:layout_marginTop="10dp"
+                android:max="80"
                 android:progressBackgroundTint="#66FFFFFF"
                 android:progressTint="@color/accent"
                 android:thumbTint="@color/accent" />
+
+            <TextView
+                style="@style/T.Label"
+                android:layout_marginTop="18dp"
+                android:text="@string/font_style" />
+
+            <GridLayout
+                android:id="@+id/grid_font"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="-4dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="-4dp"
+                android:columnCount="3" />
+
+            <TextView
+                style="@style/T.Label"
+                android:layout_marginTop="18dp"
+                android:text="@string/background" />
+
+            <GridLayout
+                android:id="@+id/grid_bg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="-4dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="-4dp"
+                android:columnCount="2" />
+
+            <LinearLayout
+                android:id="@+id/glass_opts"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/T.Label"
+                    android:layout_marginTop="18dp"
+                    android:text="@string/corners" />
+
+                <GridLayout
+                    android:id="@+id/grid_corner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="-4dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="-4dp"
+                    android:columnCount="3" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/T.Label"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:text="@string/transparency" />
+
+                    <TextView
+                        android:id="@+id/tv_alpha"
+                        style="@style/T.Label" />
+                </LinearLayout>
+
+                <SeekBar
+                    android:id="@+id/sb_alpha"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:max="90"
+                    android:progressBackgroundTint="#66FFFFFF"
+                    android:progressTint="@color/accent"
+                    android:thumbTint="@color/accent" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/switches"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical" />
         </LinearLayout>
 
         <!-- Background work hint -->

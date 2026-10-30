@@ -10,6 +10,8 @@ class WeatherWidget : AppWidgetProvider() {
 
     companion object {
         const val ACTION_REFRESH = "app.moti.kosova.REFRESH"
+        const val ACTION_TAB = "app.moti.kosova.TAB"
+        const val EXTRA_TOMORROW = "tomorrow"
     }
 
     override fun onUpdate(ctx: Context, mgr: AppWidgetManager, ids: IntArray) {
@@ -43,6 +45,14 @@ class WeatherWidget : AppWidgetProvider() {
             WidgetUpdater.updateAll(ctx, refreshing = true)
             val pending = goAsync()
             Refresher.refreshAsync(ctx, 15_000L) { pending.finish() }
+            return
+        }
+        if (intent.action == ACTION_TAB) {
+            val id = intent.getIntExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, AppWidgetManager.INVALID_APPWIDGET_ID)
+            if (id != AppWidgetManager.INVALID_APPWIDGET_ID) {
+                Prefs.setTab(ctx, "w$id", intent.getBooleanExtra(EXTRA_TOMORROW, false))
+                WidgetUpdater.update(ctx, AppWidgetManager.getInstance(ctx), id)
+            }
             return
         }
         super.onReceive(ctx, intent)

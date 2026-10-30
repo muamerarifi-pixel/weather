@@ -1,34 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Frosted glass: smoky translucent tint, soft top sheen, thin light edge. -->
+<!-- Frosted glass: smoky translucent tint, soft top sheen, thin light edge. Corners: 38dp. -->
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
     <item>
         <shape android:shape="rectangle">
-            <corners android:radius="@dimen/widget_radius" />
+            <corners android:radius="38dp" />
             <gradient
                 android:angle="315"
-                android:centerColor="#B3353C46"
-                android:endColor="#BF1D222A"
-                android:startColor="#C24F5863"
+                android:centerColor="#B8363D47"
+                android:endColor="#C21C2129"
+                android:startColor="#C7525B66"
                 android:type="linear" />
         </shape>
     </item>
     <item>
         <shape android:shape="rectangle">
-            <corners android:radius="@dimen/widget_radius" />
+            <corners android:radius="38dp" />
             <gradient
                 android:angle="270"
-                android:centerColor="#08FFFFFF"
+                android:centerColor="#06FFFFFF"
                 android:endColor="#00FFFFFF"
-                android:startColor="#24FFFFFF"
+                android:startColor="#22FFFFFF"
                 android:type="linear" />
         </shape>
     </item>
     <item>
         <shape android:shape="rectangle">
-            <corners android:radius="@dimen/widget_radius" />
+            <corners android:radius="38dp" />
             <stroke
                 android:width="1dp"
-                android:color="#4DFFFFFF" />
+                android:color="#38FFFFFF" />
         </shape>
     </item>
 </layer-list>

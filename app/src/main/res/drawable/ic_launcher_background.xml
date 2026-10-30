@@ -8,13 +8,25 @@
     <path android:pathData="M0,0h108v108h-108z">
         <aapt:attr name="android:fillColor">
             <gradient
-                android:endColor="#FF1B3253"
+                android:endColor="#FF0A1230"
                 android:endX="108"
                 android:endY="108"
-                android:startColor="#FF4F86C9"
+                android:startColor="#FF2F5BB7"
                 android:startX="0"
                 android:startY="0"
                 android:type="linear" />
+        </aapt:attr>
+    </path>
+    <!-- warm glow behind the sun -->
+    <path android:pathData="M0,0h108v108h-108z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:centerX="64"
+                android:centerY="40"
+                android:endColor="#00FFB547"
+                android:gradientRadius="44"
+                android:startColor="#59FFB547"
+                android:type="radial" />
         </aapt:attr>
     </path>
 </vector>

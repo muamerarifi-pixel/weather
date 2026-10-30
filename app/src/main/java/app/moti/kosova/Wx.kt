@@ -45,6 +45,11 @@ object Wx {
         else -> "🌡️"
     }
 
+    private val days = listOf("E diel", "E hënë", "E martë", "E mërkurë", "E enjte", "E premte", "E shtunë")
+
+    /** Albanian weekday for a local day number (days since 1970-01-01, a Thursday). */
+    fun dayName(localDay: Long): String = days[Math.floorMod(localDay + 4, 7L).toInt()]
+
     /** Rounded whole degrees, e.g. "12" or "-3". */
     fun deg(v: Double): String = if (v.isNaN()) "--" else v.roundToInt().toString()
 }

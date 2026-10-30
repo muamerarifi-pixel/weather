@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@android:id/background"
+    android:id="@+id/root"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -10,14 +10,17 @@
         android:layout_height="match_parent"
         android:importantForAccessibility="no"
         android:scaleType="fitXY"
-        android:src="@drawable/glass_bg" />
+        android:src="@drawable/glass_m" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center_vertical"
         android:orientation="vertical"
-        android:padding="14dp">
+        android:paddingStart="16dp"
+        android:paddingTop="12dp"
+        android:paddingEnd="14dp"
+        android:paddingBottom="12dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -36,29 +39,37 @@
                 android:textSize="26sp"
                 android:text="🌧️" />
 
-            <TextView
-                android:id="@+id/tv_city"
-                style="@style/W.City"
+            <FrameLayout
                 android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_marginStart="8dp"
-                android:gravity="end"
-                android:textColor="@color/text2"
-                android:textSize="13sp"
-                android:text="Prishtinë" />
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/tab_toggle"
+                style="@style/W.Tab"
+                android:background="@drawable/tab_off"
+                android:text="Nesër ›" />
         </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_city"
+            style="@style/W.City"
+            android:layout_marginTop="2dp"
+            android:textColor="@color/text2"
+            android:textSize="12.5sp"
+            android:text="Prishtinë" />
 
         <TextView
             android:id="@+id/tv_headline"
             style="@style/W.Headline"
             android:layout_marginTop="8dp"
             android:textSize="18sp"
-            android:text="Më vonë bie shi." />
+            android:text="Pas dy orësh bie shi." />
 
         <TextView
             android:id="@+id/tv_line2"
             style="@style/W.Line"
-            android:textSize="13sp"
-            android:text="Nëse del tani, vishu më trashë. 🧥" />
+            android:textSize="13.5sp"
+            android:text="Vishu trashë – pallto dhe shall. 🧥" />
     </LinearLayout>
 </FrameLayout>

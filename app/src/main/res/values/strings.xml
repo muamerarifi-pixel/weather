@@ -27,4 +27,12 @@
     <string name="battery_allow">Lejo punën në sfond</string>
     <string name="attribution">Të dhënat e motit: Open-Meteo.com (CC BY 4.0)\nCilësia e ajrit: Copernicus CAMS</string>
     <string name="now">Tani</string>
+    <string name="look">Pamja e widget-it</string>
+    <string name="text_size">Madhësia e tekstit</string>
+    <string name="font_style">Stili i shkronjave</string>
+    <string name="background">Sfondi</string>
+    <string name="corners">Qoshet</string>
+    <string name="show_emojis">Emoji në mesazhe</string>
+    <string name="show_icon">Ikona e motit</string>
+    <string name="auto_tomorrow">Pas orës 20:00 trego Nesër</string>
 </resources>

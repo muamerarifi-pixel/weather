@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@android:id/background"
+    android:id="@+id/root"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -10,15 +10,15 @@
         android:layout_height="match_parent"
         android:importantForAccessibility="no"
         android:scaleType="fitXY"
-        android:src="@drawable/glass_bg" />
+        android:src="@drawable/glass_m" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:paddingStart="12dp"
-        android:paddingEnd="12dp">
+        android:paddingStart="14dp"
+        android:paddingEnd="14dp">
 
         <TextView
             android:id="@+id/tv_icon"
@@ -30,7 +30,7 @@
         <TextView
             android:id="@+id/tv_temp"
             style="@style/W.TempS"
-            android:layout_marginStart="4dp"
+            android:layout_marginStart="6dp"
             android:text="12°" />
 
         <TextView
@@ -38,8 +38,8 @@
             style="@style/W.Headline"
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:layout_marginStart="10dp"
+            android:layout_marginStart="12dp"
             android:textSize="14sp"
-            android:text="Më vonë bie shi." />
+            android:text="Pas dy orësh bie shi." />
     </LinearLayout>
 </FrameLayout>

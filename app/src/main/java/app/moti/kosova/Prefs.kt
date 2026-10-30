@@ -27,7 +27,7 @@ object Prefs {
 
     fun removeWidgets(ctx: Context, ids: IntArray) {
         val e = sp(ctx).edit()
-        for (id in ids) e.remove("w_$id")
+        for (id in ids) e.remove("w_$id").remove("tab_w$id").remove("tabAt_w$id")
         e.apply()
     }
 
@@ -42,6 +42,32 @@ object Prefs {
     fun setTransparency(ctx: Context, percent: Int) = sp(ctx).edit().putInt("transparency", percent).apply()
 
     fun glassAlpha(ctx: Context): Int = ((100 - transparency(ctx)) * 255 / 100).coerceIn(0, 255)
+
+    // ---- look ----
+    fun textScale(ctx: Context): Int = sp(ctx).getInt("scale", 115)
+    fun font(ctx: Context): Int = sp(ctx).getInt("font", 0)
+    fun background(ctx: Context): Boolean = sp(ctx).getBoolean("bg", true)
+    fun corner(ctx: Context): Int = sp(ctx).getInt("corner", 1)
+    fun emojis(ctx: Context): Boolean = sp(ctx).getBoolean("emoji", true)
+    fun showIcon(ctx: Context): Boolean = sp(ctx).getBoolean("icon", true)
+    fun autoTomorrow(ctx: Context): Boolean = sp(ctx).getBoolean("autoTomorrow", true)
+
+    fun putInt(ctx: Context, key: String, v: Int) = sp(ctx).edit().putInt(key, v).apply()
+    fun putBool(ctx: Context, key: String, v: Boolean) = sp(ctx).edit().putBoolean(key, v).apply()
+
+    // ---- Sot / Nesër tab ([key] = "w<widgetId>" or "app") ----
+    fun setTab(ctx: Context, key: String, tomorrow: Boolean) =
+        sp(ctx).edit().putInt("tab_$key", if (tomorrow) 1 else 0).putLong("tabAt_$key", System.currentTimeMillis()).apply()
+
+    /** A tab the user picked counts for 3 hours; otherwise "Nesër" is shown automatically after 20:00. */
+    fun showTomorrow(ctx: Context, key: String): Boolean {
+        val t = sp(ctx).getInt("tab_$key", -1)
+        val at = sp(ctx).getLong("tabAt_$key", 0L)
+        val auto = autoTomorrow(ctx)
+        if (t >= 0 && (!auto || System.currentTimeMillis() - at < 3 * 3600_000L)) return t == 1
+        if (!auto) return false
+        return java.util.Calendar.getInstance().get(java.util.Calendar.HOUR_OF_DAY) >= 20
+    }
 
     // ---- status ----
     fun lastFailed(ctx: Context): Boolean = sp(ctx).getBoolean("failed", false)
